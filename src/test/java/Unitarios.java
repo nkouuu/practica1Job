@@ -25,6 +25,21 @@ public class Unitarios {
 		assertArrayEquals(board.getCellsIfWinner("o"),i);
 		
 	}
+	@Test
+	public void playerDontWinsTest(){
+		assertNull(board.getCellsIfWinner("o"));
+		board.getCell(0).setValue("o");
+		board.getCell(5).setValue("x");
+		board.getCell(1).setValue("o");
+		board.getCell(8).setValue("x");
+		board.getCell(2).setValue("x");
+		board.getCell(6).setValue("o");
+		
+		int[] i={0,1,2};
+		assertNull(board.getCellsIfWinner("o"));
+		assertArrayEquals(board.getCellsIfWinner("o"),i);
+		
+	}
 	
 	@Test
 	public void drawTest(){

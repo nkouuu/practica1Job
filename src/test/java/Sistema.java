@@ -64,6 +64,57 @@ public class Sistema {
 		
 		
 	}
+	
+	@Test
+	public void player2WinsTest() throws InterruptedException {
+		
+		board[6].click();
+		Thread.sleep(1000);
+		
+		board2[0].click();
+		Thread.sleep(1000);
+		board[3].click();
+		Thread.sleep(1000);
+		board2[2].click();
+		Thread.sleep(1000);
+		board[4].click();
+		Thread.sleep(1000);
+		board2[1].click();
+		Thread.sleep(1000);
+		assertEquals(driver.switchTo().alert().getText(),"sergio wins! nico looses.");
+		assertEquals(driver2.switchTo().alert().getText(),"sergio wins! nico looses.");
+		
+		
+	}
+	
+	@Test
+	public void drawTest() throws InterruptedException {
+		
+		board[0].click();
+		Thread.sleep(1000);
+		
+		board2[4].click();
+		Thread.sleep(1000);
+		board[8].click();
+		Thread.sleep(1000);
+		board2[1].click();
+		Thread.sleep(1000);
+		board[7].click();
+		Thread.sleep(1000);
+		board2[6].click();
+		Thread.sleep(1000);
+		board[2].click();
+		Thread.sleep(1000);
+		board2[5].click();
+		Thread.sleep(1000);
+		board[3].click();
+		Thread.sleep(1000);
+		assertEquals(driver.switchTo().alert().getText(),"Draw!");
+		assertEquals(driver2.switchTo().alert().getText(),"Draw!");
+		
+		
+	}
+	
 	@After
 	public void closeBrowser() throws Exception {
 		driver.quit();

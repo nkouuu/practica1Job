@@ -1,6 +1,9 @@
 import  org.junit.*;
-import static org.junit.Assert.*;
+
 import es.codeurjc.ais.tictactoe.Board;
+
+import static org.junit.Assert.*;
+
 
 public class Unitarios {
 	
